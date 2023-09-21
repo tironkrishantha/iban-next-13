@@ -1,4 +1,4 @@
-import ApplicationLogo from '@/components/ApplicationLogo'
+'use client'
 import AuthCard from '@/components/AuthCard'
 import AuthSessionStatus from '@/components/AuthSessionStatus'
 import Button from '@/components/Button'
@@ -10,7 +10,6 @@ import Link from 'next/link'
 import { useAuth } from '@/hooks/auth'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import Layout from '@/Layout'
 
 const Login = () => {
     const router = useRouter()
@@ -48,7 +47,12 @@ const Login = () => {
 
     return (
         <GuestLayout>
-            <Layout>
+            <AuthCard
+                logo={
+                    <Link href="/">
+                        <h2>IBAM</h2>
+                    </Link>
+                }>
                 {/* Session Status */}
                 <AuthSessionStatus className="mb-4" status={status} />
 
@@ -121,7 +125,7 @@ const Login = () => {
                         <Button className="ml-3">Login</Button>
                     </div>
                 </form>
-            </Layout>
+            </AuthCard>
         </GuestLayout>
     )
 }

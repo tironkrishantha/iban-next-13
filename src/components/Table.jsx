@@ -1,4 +1,5 @@
 import { useTable, usePagination } from 'react-table'
+import Button from './Button'
 
 const Table = ({ data, columns }) => {
     const {
@@ -62,22 +63,22 @@ const Table = ({ data, columns }) => {
             </div>
 
             <div className="pagination">
-                <button
+                <Button
                     onClick={() => previousPage()}
                     disabled={!canPreviousPage}
                     className='p-2'
                     >
                     Previous
-                </button>
+                </Button>
                 <span>
                     Page{' '}
                     <strong>
                         {state.pageIndex + 1} of {pageOptions.length}
                     </strong>{' '}
                 </span>
-                <button onClick={() => nextPage()} disabled={!canNextPage}>
+                <Button onClick={() => nextPage()} disabled={!canNextPage}>
                     Next
-                </button>
+                </Button>
             </div>
 
         </>

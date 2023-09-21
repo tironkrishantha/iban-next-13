@@ -1,5 +1,5 @@
 'use client'
-import Layout from '@/Layout'
+import Layout from '@/pages/Layout'
 import Button from '@/components/Button'
 import axios from 'axios'
 import Head from 'next/head'
